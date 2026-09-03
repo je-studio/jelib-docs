@@ -1,0 +1,1606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A growing collection of Houdini tools that remove friction from your workflow, so you can stay focused on being creative.">
+      
+      
+      
+        <link rel="canonical" href="https://je-studio.github.io/jelib-docs/animation/">
+      
+      
+        <link rel="prev" href="../formats/">
+      
+      
+        <link rel="next" href="../solaris/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/jelib-logo-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Animation & sequences - JElib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#animation-sequences" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="JElib" class="md-header__button md-logo" aria-label="JElib" data-md-component="logo">
+      
+  <img src="../assets/images/jelib-logo-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JElib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Animation & sequences
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="JElib" class="md-nav__button md-logo" aria-label="JElib" data-md-component="logo">
+      
+  <img src="../assets/images/jelib-logo-badge.svg" alt="logo">
+
+    </a>
+    JElib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add your libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import your first asset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the browser
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using the browser
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../find/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find & organize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote & cloud libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import into your scene
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported file formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation & sequences
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation & sequences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What gets detected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frame-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rigged-animated-fbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rigged &amp; animated FBX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-instance-time-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-instance time offset
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solaris/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working in Solaris (USD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../save-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Save to the browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renderers & materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../palettes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color palettes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Texture atlases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thumbnails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Make thumbnails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panel reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Panel reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-browse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-collect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collect Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-relink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relink Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameter-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameter menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-detected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What gets detected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frame-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rigged-animated-fbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rigged &amp; animated FBX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-instance-time-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-instance time offset
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="animation-sequences">Animation &amp; sequences</h1>
+<p>JElib handles three kinds of moving asset: <strong>frame sequences</strong> on disk, a <strong>single
+animated Alembic</strong>, and a <strong>rigged/animated FBX</strong>. Each is detected during the scan
+and imported as an animated setup — no manual <code>$F</code> wiring, no KineFX chain to build
+by hand.</p>
+<h2 id="what-gets-detected">What gets detected</h2>
+<table>
+<thead>
+<tr>
+<th>On disk</th>
+<th>Card badge</th>
+<th>Asset Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numbered frame files — <code>smoke_0001.vdb</code>, <code>anim.0001.abc</code>, <code>cache_v1.0001.bgeo.sc</code></td>
+<td><code>SEQ</code> (a VDB sequence badges <code>VDB</code>)</td>
+<td><strong>Frames</strong> row, e.g. <em>1-120</em></td>
+</tr>
+<tr>
+<td>One <code>.abc</code> holding animation</td>
+<td><code>ABC</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>.fbx</code> with a skin binding <strong>and</strong> animation curves</td>
+<td><code>ANIM</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>.fbx</code> with a skin binding but no animation</td>
+<td><code>RIG</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Frame sequences collapse into <strong>one card</strong> with a <code>$F</code> template — the individual
+frames never clutter the grid. Two or more numbered files sharing a stem in the same
+folder make a family; LOD siblings (<code>crate_lod0/1/2</code>) are excluded, so they still
+group as LODs rather than a bogus 3-frame sequence.</p>
+<p>Rigged FBX detection reads the file's own skin/animation markers, so it works on
+binary and ASCII FBX alike.</p>
+<h2 id="frame-sequences">Frame sequences</h2>
+<p>Supported for <code>.abc</code>, <code>.bgeo</code> / <code>.bgeo.sc</code>, <code>.vdb</code>, and <code>.rs</code> — see
+<a href="../formats/#geometry">Supported file formats</a>.</p>
+<ul>
+<li><strong>OBJ / SOP</strong> — the import reads the <code>$F</code> template, so the asset plays with the
+  timeline as you scrub.</li>
+<li><strong>Solaris</strong> — the same, and the <strong>Bake .usd / Auto</strong> modes write a <strong>time-sampled</strong>
+  USD over the sequence's frame range instead of freezing frame 1. A baked sequence
+  cache is only rebuilt when its frames or range actually change.</li>
+<li><strong>VDB</strong> sequences drive the <code>volume</code> LOP's time-dependent sampling and get a
+  <a href="../renderers/">volume shader</a> for your renderer.</li>
+<li>Missing frames are allowed but flagged in the import notes — the instancing retime
+  below assumes a contiguous cache and copies pop where a frame is absent.</li>
+<li>A <code>$F</code> sequence baked to USD authors <strong>no proxy or collision (simproxy)
+  representation</strong> — those are static-asset-only. The render mesh bakes as usual.</li>
+</ul>
+<p><code>$F</code> sequences appear in Houdini's native Solaris Asset Catalog / Paint Instances
+gallery alongside rigged FBX (VDB and <code>.rs</code> proxy sequences don't — see
+<a href="../solaris/#houdinis-native-galleries">Houdini's native galleries</a>).</p>
+<h2 id="rigged-animated-fbx">Rigged &amp; animated FBX</h2>
+<p>Drop one and JElib builds a <strong>KineFX character chain</strong> rather than a plain file SOP:
+<code>fbxcharacterimport</code> feeding a MotionClip <code>pack → cycle → eval</code> into a <code>bonedeform</code>,
+so the character actually deforms on the timeline. Rigged FBX default to import
+scale <strong>1.0</strong> (not the static-FBX <code>0.01</code>).</p>
+<p>In <strong>Solaris</strong>, the LOP Import combo swaps its two build modes for skeleton-aware
+ones:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>USD Skel</strong></td>
+<td>The live, editable graph in the stage — KineFX SOPs in a self-contained <code>sopcreate</code> host feeding a <code>sopcharacterimport</code> LOP</td>
+</tr>
+<tr>
+<td><strong>Bake USD</strong></td>
+<td>A real UsdSkel component on disk — <code>SkelRoot</code> / <code>Skeleton</code> / <code>SkelAnimation</code>, plus a <code>proxy</code> representation and the material under the component</td>
+</tr>
+<tr>
+<td><strong>Use Cached USD</strong></td>
+<td>References whatever cache exists; never re-bakes</td>
+</tr>
+</tbody>
+</table>
+<p>Baked skeletons carry their materials, including textures from a Mixamo-style
+<code>&lt;name&gt;.fbm</code> sidecar folder that ordinary name-grouping can't associate.</p>
+<div class="admonition note">
+<p class="admonition-title">Native frame placement</p>
+<p>A clip bakes exactly where it sits in its own timeline — no loop, no normalize.
+USD holds the last sample past the end of the range, so the character freezes on
+its final pose rather than snapping back once the clip plays through. Looping is
+a separate, composition-time choice — see below.</p>
+</div>
+<h2 id="loop">Loop</h2>
+<p>A <strong>Loop</strong> checkbox appears in the preview panel's Import Settings for any asset
+whose bake carries animation — a rigged/animated FBX or an <code>$F</code> sequence. VDB
+sequences and <code>.rs</code> proxy sequences don't get it; they don't bake through the same
+clip mechanism. Off (the default), the animation plays once and holds on its last
+frame; on, it repeats for the whole scene playback range.</p>
+<p>Loop works in every Solaris import mode, live or baked, and for rigged FBX in the
+OBJ/SOP context too — JElib picks whichever mechanism the mode can actually carry:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baked / referenced USD (Bake USD, Auto when it can write)</td>
+<td>A USD <strong>Value Clip</strong> wrapping the one-cycle cache, authored at drop time against the scene's playback range</td>
+</tr>
+<tr>
+<td>Rigged FBX, live (SOP Create, OBJ, USD Skel)</td>
+<td>The KineFX <strong>MotionClip cycle</strong>'s Cycles After, sized to the playback range</td>
+</tr>
+<tr>
+<td><code>$F</code> sequence, live (SOP Create, Component Builder)</td>
+<td>A <code>seq_frame</code> timeshift that wraps instead of clamping to the last frame</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>$F</code> sequence imported into an <strong>OBJ/SOP</strong> network is the one case Loop doesn't
+reach — that chain reads the frame straight off the scene, so it neither loops nor
+holds past the sequence's own range. Import it into Solaris to loop it.</p>
+<p>You don't need to know which one applies — but the node it builds is a normal part
+of the network, so you can flip its loop toggle by hand afterwards if the scene's
+playback range changes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Behaviour change: rigged FBX in live modes used to always loop</p>
+<p>Earlier builds looped a rigged FBX's MotionClip unconditionally in SOP Create
+and OBJ. It now respects <strong>Loop</strong> like every other mode — plays once and holds
+unless you tick it.</p>
+</div>
+<h2 id="per-instance-time-offset">Per-instance time offset</h2>
+<p>With <strong>Create Instances</strong> on an animated asset, every copy would otherwise play in
+lockstep. The generated <strong>time-offset wrangle</strong> staggers them — a field of flowers
+that don't all bloom on the same frame.</p>
+<p>The controls sit on that wrangle's parameters, next to the
+<a href="../import-assets/#instance-a-model-plant-or-atlas">distribution and wind controls</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start Frame</strong></td>
+<td>The sequence frame every copy starts on before its offset — raise it to skip preroll. Playback anchors to the scene's playback start, so the result reads the same on any timeline.</td>
+</tr>
+<tr>
+<td><strong>Spread Mode</strong></td>
+<td><strong>Random</strong> (seeded per copy) · <strong>Step</strong> (ramped by copy index — a wave) · <strong>Attribute</strong> (frame driven directly by a point attribute)</td>
+</tr>
+<tr>
+<td><strong>Spread</strong></td>
+<td>Maximum frames of stagger across copies. <code>0</code> = lockstep.</td>
+</tr>
+<tr>
+<td><strong>Loop</strong></td>
+<td>Wrap the animation so copies stay spread across the whole range at every frame. Off: each copy plays once and holds on its last frame.</td>
+</tr>
+<tr>
+<td><strong>Seed</strong></td>
+<td>Random mode only.</td>
+</tr>
+<tr>
+<td><strong>Offset Remap</strong></td>
+<td>Step mode only — reshapes the linear index ramp that scales the offset.</td>
+</tr>
+<tr>
+<td><strong>Offset Attribute</strong></td>
+<td>Attribute mode only — the <code>0–1</code> point attribute to scale the offset by (default <code>factor</code>). A missing attribute reads as <code>0</code>, i.e. same timing for every copy.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How each source is retimed</strong> — JElib picks the mechanism the format can actually
+sustain:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Mechanism</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single animated <code>.abc</code></td>
+<td>Per-copy Alembic time on packed prims</td>
+<td>The viewport can't draw per-copy Alembic time — it renders correctly. An archive whose content doesn't actually move is treated as static, even if it carries a time range</td>
+</tr>
+<tr>
+<td><code>.bgeo</code> / <code>.bgeo.sc</code> sequence</td>
+<td>Bare points, each loading its own frame file</td>
+<td>Karma and Redshift honour the per-point material; Octane uses the object material</td>
+</tr>
+<tr>
+<td><code>.rs</code> proxy sequence</td>
+<td>Same, via the proxy file per point</td>
+<td>Redshift only</td>
+</tr>
+<tr>
+<td><code>.abc</code> sequence</td>
+<td>—</td>
+<td><strong>Create Instances is unavailable.</strong> Every offset copy needs its own archive open, which is unusably slow. Bake to <code>.bgeo.sc</code> and instance that instead.</td>
+</tr>
+<tr>
+<td>Solaris / USD</td>
+<td>A Cache LOP + <strong>Retime Instances</strong>, with bucketed per-instance offsets</td>
+<td>Automatic — no separate offset controls in the preview panel. Scattered copies each play the animation at their own phase, on a native USD PointInstancer. See <a href="../solaris/#instancing-in-the-stage">Per-instance time offset in the stage</a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Both halves are on the same wrangle</p>
+<p>Whichever mechanism is used, the parameters above are identical — you dial
+Spread Mode / Spread / Seed the same way for a <code>.abc</code> prop and a <code>.bgeo.sc</code>
+cache.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "toc.follow", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

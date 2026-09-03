@@ -1,0 +1,1700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A growing collection of Houdini tools that remove friction from your workflow, so you can stay focused on being creative.">
+      
+      
+      
+        <link rel="canonical" href="https://je-studio.github.io/jelib-docs/solaris/">
+      
+      
+        <link rel="prev" href="../animation/">
+      
+      
+        <link rel="next" href="../save-assets/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/jelib-logo-badge.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Working in Solaris (USD) - JElib</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#working-in-solaris-usd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="JElib" class="md-header__button md-logo" aria-label="JElib" data-md-component="logo">
+      
+  <img src="../assets/images/jelib-logo-badge.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JElib
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working in Solaris (USD)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to dark"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="JElib" class="md-nav__button md-logo" aria-label="JElib" data-md-component="logo">
+      
+  <img src="../assets/images/jelib-logo-badge.svg" alt="logo">
+
+    </a>
+    JElib
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add your libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import your first asset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the browser
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using the browser
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../find/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find & organize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote & cloud libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import into your scene
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported file formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation & sequences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working in Solaris (USD)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working in Solaris (USD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#it-follows-your-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It follows your context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bringing-non-usd-geometry-into-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing non-USD geometry into the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-or-sublayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference or sublayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-usd-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native USD assets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-reusing-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baking &amp; reusing caches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-in-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials in the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#houdinis-native-galleries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Houdini's native galleries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kits-asset-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kits &amp; asset packs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instancing-in-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instancing in the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good to know
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../save-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Save to the browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Renderers & materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../palettes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color palettes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Texture atlases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thumbnails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Make thumbnails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panel reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Panel reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-browse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-collect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collect Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-relink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relink Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameter-menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameter menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#it-follows-your-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It follows your context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bringing-non-usd-geometry-into-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bringing non-USD geometry into the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-or-sublayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference or sublayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-usd-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native USD assets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-reusing-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baking &amp; reusing caches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-in-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials in the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#houdinis-native-galleries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Houdini's native galleries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kits-asset-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kits &amp; asset packs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instancing-in-the-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instancing in the stage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good to know
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="working-in-solaris-usd">Working in Solaris (USD)</h1>
+<p>JElib works natively in Solaris. Drop an asset into a <strong>LOP network / stage</strong> and it
+builds <strong>USD</strong> — references, materials, and instancing all native to the stage —
+instead of the SOP-based setup you'd get in OBJ.</p>
+<h2 id="it-follows-your-context">It follows your context</h2>
+<p>Dropping into a Solaris network builds USD automatically — JElib reads the network
+editor you dropped into, so a multi-asset drop keeps landing in the same stage.
+Dropping into OBJ builds the classic geo network instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Import Into Active Network</p>
+<p>The stage is used when <strong>Import Into Active Network</strong>
+(<a href="../ref-preferences/#import">Preferences → Import → Advanced</a>) is on. Turn it off
+to always create a fresh top-level container regardless of where you drop.</p>
+</div>
+<p><img alt="Dropping an asset into a Solaris network creates native LOP nodes" src="../assets/images/jelib-solaris-network.png" /></p>
+<h2 id="bringing-non-usd-geometry-into-the-stage">Bringing non-USD geometry into the stage</h2>
+<p>Models that aren't already USD (<a href="../formats/#geometry">see Supported file formats</a>)
+can enter the stage several ways. Set the default in
+<a href="../ref-preferences/#usd">Preferences → USD → USD Import Mode</a>; override per import in
+the preview panel's <strong>LOP Import</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What lands in the stage</th>
+<th>Writes to disk?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto</strong> <em>(default)</em></td>
+<td>Bakes a <code>.usd</code> sidecar and references it <strong>if the asset folder is writable</strong>; otherwise falls back to SOP Create</td>
+<td>Only if writable</td>
+</tr>
+<tr>
+<td><strong>SOP Create</strong></td>
+<td>A <code>sopcreate</code> LOP wrapping the import chain</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Component Builder</strong></td>
+<td>A live, editable <code>componentgeometry → componentoutput</code> chain</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Bake .usd</strong></td>
+<td>Always writes <code>&lt;asset&gt;/usd/&lt;name&gt;.usd</code> and references it</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Use Cached USD</strong></td>
+<td>References an existing baked <code>.usd</code> as-is — never rebuilds</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The preview panel labels these <strong>USD Auto Import · SOP Create · Component Builder ·
+Build USD · Use Cached USD</strong>; a <strong>rigged/animated FBX</strong> swaps the last two build
+modes for <strong>USD Skel</strong> and <strong>Bake USD</strong> — see
+<a href="../animation/#rigged-animated-fbx">Animation &amp; sequences</a>.</p>
+<p>Only the baking modes (Bake, and Auto when it can write) produce a reusable <code>.usd</code>
+on disk — <strong>SOP Create</strong> and <strong>Component Builder</strong> keep everything live in the
+scene, which is heavier and can't be reused across drops.</p>
+<h2 id="reference-or-sublayer">Reference or sublayer</h2>
+<p><a href="../ref-preferences/#usd">Preferences → USD → USD Import As</a> controls how the asset
+composes into the stage:</p>
+<ul>
+<li><strong>Reference</strong> <em>(default)</em> — a <code>reference</code> LOP brings the asset in under its own
+  prim, <code>/&lt;asset_name&gt;</code>. The standard way to bring in a contained asset.</li>
+<li><strong>Sublayer</strong> — a <code>sublayer</code> LOP merges the file's own layer structure into the
+  stage as-is.</li>
+</ul>
+<h2 id="native-usd-assets">Native USD assets</h2>
+<p>A <code>.usd</code> / <code>.usdc</code> / <code>.usda</code> / <code>.usdz</code> asset is <strong>referenced directly</strong> — no baking,
+no SOP import — following your Reference/Sublayer choice. Multi-variant USD plants
+come in as a single reference with one prim per variant.</p>
+<h2 id="baking-reusing-caches">Baking &amp; reusing caches</h2>
+<p>When a mode bakes, JElib writes to <code>&lt;asset&gt;/usd/&lt;name&gt;/…</code> next to the source by
+default. Two preferences change and reuse that:</p>
+<ul>
+<li><strong>Cache to $HIP</strong> — write caches under <code>$HIP/usd/…</code> instead, handy when the asset
+  folder is read-only or you'll collect everything with the hip later. <em>(Save your
+  scene first — an unsaved hip falls back to the asset folder with a warning.)</em></li>
+<li><strong>Use Baked Cache</strong> — when an up-to-date <code>.usd</code> cache already exists, reference it
+  directly instead of rebuilding the Component Builder chain. Much lighter for
+  production scenes.</li>
+<li><strong>Clean Up After Bake</strong> — after baking, remove the Component Builder nodes and
+  leave just the reference. Re-baking then needs a fresh import.</li>
+<li><strong>Proxy Detail (%)</strong> — how much the Component Builder reduces the proxy
+  representation when baking. Doesn't apply to a <code>$F</code> sequence bake — those
+  author no proxy.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Animated sources bake animated</p>
+<p>A <code>$F</code> sequence bakes as a <strong>time-sampled</strong> USD over its own frame range, not a
+frozen first frame, and only re-bakes when its frames change — with no proxy or
+collision representation (static assets only). A rigged FBX bakes as a real
+UsdSkel component, with its own proxy. Either can <strong>Loop</strong> for the whole scene
+range. See <a href="../animation/">Animation &amp; sequences</a>.</p>
+</div>
+<h2 id="materials-in-the-stage">Materials in the stage</h2>
+<p>JElib builds a <code>materiallibrary</code> and wires a material assignment onto the imported
+prims for you — per renderer, the shader lives in that library
+(<code>rs_usd_material_builder</code> for Redshift, <code>octane_solaris_material_builder</code> for
+Octane, an <code>mtlx</code> subnet for Karma). See <a href="../renderers/">Renderers &amp; materials</a> for
+what gets wired.</p>
+<div class="admonition note">
+<p class="admonition-title">Viewport preview</p>
+<p>Redshift and Octane materials also get a <strong>UsdPreviewSurface</strong> so they shade in
+the GL/Storm viewport. Karma's MaterialX shaders preview natively, so they don't
+get one — a non-Karma Storm viewport may show a Karma material flat.</p>
+</div>
+<h2 id="houdinis-native-galleries">Houdini's native galleries</h2>
+<p>JElib also registers as a <strong>Solaris asset gallery data source</strong>, so your libraries
+appear inside Houdini's own USD tools:</p>
+<ul>
+<li><strong>Layout Asset Gallery / Stage Manager / Paint Instances</strong> — the shared layout
+  gallery defaults to <em>JElib Library</em> on startup and lists your model libraries in
+  their folder hierarchy (vendor libraries group by pack or collection). Rigged/
+  animated FBX and <code>$F</code> frame sequences appear here alongside static models; VDB
+  and <code>.rs</code> proxy sequences don't, since they import through the volume/proxy LOPs
+  rather than the gallery's model bake.</li>
+<li><strong>Material Catalog / Material Linker</strong> — pick <em>JElib Library</em> from the catalog's
+  source menu to list your materials there.</li>
+</ul>
+<p><img alt="Houdini native Asset Catalog with JElib Library selected from its source menu" src="../assets/images/jelib-native-gallery.png" /></p>
+<p>You can also <strong>drag directly from the JElib grid</strong> into Stage Manager, Paint
+Instances or the Material Linker — the drag carries Houdini's own asset payload, so
+the native tools accept it like one of their items.</p>
+<p>Materials dropped this way bake to a small standalone <code>.usd</code> next to the asset (or
+under <code>$HIP</code> with <strong>Cache to $HIP</strong>) that references the textures in place — one
+file per renderer, built with the active renderer's shader network and the panel's
+Material Type. <strong>Delete USD Cache</strong> in the preview panel removes them. Paths follow
+<strong>Force Absolute File Paths</strong>, so gallery references stay portable.</p>
+<h2 id="kits-asset-packs">Kits &amp; asset packs</h2>
+<p>A multi-model FBX kit — a full city kit, a props pack — bakes as a <strong>USD
+assembly</strong> holding a <strong>component per model</strong>. What that buys you:</p>
+<ul>
+<li><strong>A gallery card per model.</strong> The Asset Catalog fans the kit out into one card
+  per building; the whole-kit card still drops the city in its authored layout.</li>
+<li><strong>Light references.</strong> Each model writes a small USD of its own beside the pack,
+  so referencing one building from Stage Manager never opens the whole city.</li>
+<li><strong>Scattering picks models.</strong> Create Instances on a kit mixes the kit's models
+  as prototypes (both instance methods), and a <strong>Choose models</strong> toggle in the
+  inspector opens a picker for which pieces scatter — leave the dumpsters out.</li>
+<li><strong>Per-model viewport proxies.</strong> Every model carries proxy geometry: dense
+  pieces decimated, small pieces passed through, very heavy pieces (500k+ faces)
+  a bounding box — so a scattered city stays responsive in the viewport.</li>
+</ul>
+<p>Kit detection is automatic (all meshes named into groups, 8 or more groups), and
+the cards get their pictures from the viewport moments after the bake lands.</p>
+<h2 id="instancing-in-the-stage">Instancing in the stage</h2>
+<p>With <strong>Create Instances</strong> on, a Solaris import builds a <strong>native USD PointInstancer</strong>
+rather than the SOP copy-to-points setup used in OBJ. The same
+<a href="../import-assets/#instance-a-model-plant-or-atlas">distribution and wind controls</a>
+apply.</p>
+<p>Which LOP it lands as depends on the <strong>instance method</strong> picked in the preview panel,
+and on your Houdini version:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>H20.5 / H21</th>
+<th>H22</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Copy to Points</strong> <em>(default)</em></td>
+<td>the <strong>Instancer</strong> LOP</td>
+<td>the same node, renamed <strong>Copy to Points</strong> — matching its SOP counterpart</td>
+</tr>
+<tr>
+<td><strong>Scatter Instances (H22)</strong></td>
+<td>not available</td>
+<td>the <strong>Scatter Instances</strong> LOP, which scatters onto a surface and authors the PointInstancer in one node</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Same node, new name</p>
+<p>H22 renamed the Instancer LOP to <em>Copy to Points</em>; scenes and scripts
+using the old <code>instancer</code> type still resolve to it. <strong>Scatter Instances</strong> is a
+separate, H22-only node — the panel greys the option out on older builds.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Per-instance time offset in the stage</p>
+<p>An <strong>animated asset</strong> with Create Instances on gets a Cache LOP +
+<strong>Retime Instances</strong> with bucketed per-instance offsets, so scattered copies
+play the animation at their own phase on a native USD PointInstancer — not
+lockstep. The retime wrangle exposes <strong>Bucket Count</strong> (how many distinct
+offsets — each one costs a prototype, so it's the cost dial) and <strong>Seed</strong>;
+everything else is automatic. See
+<a href="../animation/#per-instance-time-offset">Per-instance time offset</a>.</p>
+<p><strong>Several animated assets can share one crowd.</strong> Multi-select two or more
+Create-Instances models (at least one animated) and drop them together: they
+merge into <strong>one</strong> instancer — one scatter mixing every asset as prototypes,
+each copy offset within its <strong>own</strong> asset's clip length. Anything that can't
+safely join — a kit, two assets claiming the same stage prim, an animated
+asset that hasn't baked yet — automatically keeps its own separate chain,
+and the footer says why.</p>
+<p><code>.abc</code> <strong>sequences</strong> stay excluded from Create Instances everywhere — every
+offset copy would need its own archive open, which is unusably slow. Bake to
+<code>.bgeo.sc</code> and instance that instead.</p>
+</div>
+<h2 id="good-to-know">Good to know</h2>
+<ul>
+<li><strong>Renderer not installed?</strong> The USD geometry still loads — the material is just
+  skipped, so you get untextured geo. Switch to an installed renderer and re-import.</li>
+<li><strong>Read-only asset folder?</strong> Auto quietly falls back to SOP Create (no cache). Use
+  <strong>Bake .usd</strong> + <strong>Cache to $HIP</strong> to force a reusable cache elsewhere.</li>
+<li>Proxy Detail, Component Builder, and material building don't apply to <strong>native
+  USD</strong> files — those are referenced exactly as authored.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "toc.follow", "content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
