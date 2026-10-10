@@ -1,0 +1,241 @@
+/* JElib manual — amber-on-dark, matched to the plugin's browser tokens (theme.py). */
+
+/* ---- dark (default) ---- */
+[data-md-color-scheme="slate"] {
+  --md-hue: 30;   /* slate's derived surfaces default to a blue hue (~232°); warm them */
+  --md-default-bg-color:            #222222;
+  --md-default-fg-color:            #e0e0e0;
+  --md-default-fg-color--light:     #c8c8c8;
+  --md-default-fg-color--lighter:   #8c8c8c;
+  --md-default-fg-color--lightest:  #3a3a3a;
+  --md-primary-fg-color:            #2b2b2b;
+  --md-primary-bg-color:            #e0e0e0;
+  --md-accent-fg-color:             #cc7a00;
+  --md-typeset-a-color:             #cc7a00;
+  --md-code-bg-color:               #1c1c1c;
+  --md-code-fg-color:               #e0e0e0;
+}
+
+/* ---- light ---- */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color:            #f5f4f0;
+  --md-default-fg-color:            #1c1b19;
+  --md-default-fg-color--light:     #66635e;
+  --md-default-fg-color--lighter:   #8c877f;
+  --md-default-fg-color--lightest:  #dedbd4;
+  --md-primary-fg-color:            #eeede8;
+  --md-primary-bg-color:            #1c1b19;
+  --md-accent-fg-color:             #b36600;
+  --md-typeset-a-color:             #a05a00;
+}
+
+/* `primary: black` hard-codes a blue link/active color at 2-attr specificity — match it back to amber */
+[data-md-color-scheme="slate"][data-md-color-primary="black"]  { --md-typeset-a-color: #cc7a00; }
+[data-md-color-scheme="default"][data-md-color-primary="black"] { --md-typeset-a-color: #a05a00; }
+[data-md-color-primary="black"] { --md-primary-bg-color--light: var(--md-default-fg-color--light); }
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning { border-color: var(--md-accent-fg-color); }
+
+.md-nav__item--section > .md-nav__link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 1.25em;
+  cursor: default;
+}
+.md-nav__link--active { font-weight: 600; }
+
+.md-header__button.md-logo { margin-right: 0.1rem; }
+.md-header__title { margin-left: 0; }
+.md-header__title .md-ellipsis { position: relative; top: 1px; }
+.md-header__option[data-md-component="palette"] { order: 1; }
+.md-search__input { padding-top: 3px; }
+[data-md-color-primary="black"] .md-header,
+[data-md-color-primary="black"] .md-tabs,
+[data-md-color-primary="black"] .md-nav__source {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+[data-md-color-scheme="default"] .md-logo img { filter: brightness(0); }
+[data-md-color-scheme="default"] .md-search__form { background-color: rgba(0, 0, 0, 0.05); }
+@media screen and (max-width: 76.234375em) {
+  html [data-md-color-primary="black"] .md-nav--primary .md-nav__title[for="__drawer"] {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+  }
+}
+
+.md-typeset .doc-focus { margin: 1em 0; }
+.md-typeset .doc-focus.doc-compact { max-width: 20rem; }
+.md-typeset .doc-focus svg { display: block; width: 100%; height: auto; }
+.doc-focus.doc-pair { display: grid; grid-template-columns: 1fr 2fr; align-items: center; gap: 1rem; }
+.doc-focus .focus-ring { fill: none; stroke: var(--md-accent-fg-color); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.doc-focus .focus-step circle { fill: var(--md-accent-fg-color); }
+.doc-focus .focus-step text { fill: black; font-family: sans-serif; font-weight: bold; text-anchor: middle; dominant-baseline: central; }
+
+.md-typeset .mode-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.md-typeset .mode-comparison figure { margin: 0; }
+.md-typeset .mode-comparison img {
+  display: block;
+  margin: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+.md-typeset .mode-comparison figcaption {
+  padding-top: 0.45rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.78rem;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .mode-comparison { grid-template-columns: 1fr; }
+  .doc-focus.doc-pair { grid-template-columns: 1fr; }
+  .doc-focus.doc-pair svg:first-child { max-width: 12rem; }
+}
+
+
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  cursor: default;
+}
+
+.md-typeset h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+
+.md-typeset h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  letter-spacing: -0.01em;
+  line-height: 2rem;
+  margin: 2em 0 0.7em;
+  padding-top: 1.4em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  letter-spacing: -0.01em;
+  line-height: 1.6rem;
+  margin: 1.6em 0 0.6em;
+}
+
+.md-typeset h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  line-height: 1.4rem;
+}
+
+/* H2's divider on an H3, for a page whose sections sit at H3 under the H1
+   (UI_SYSTEM §14, the Install page). */
+.md-typeset .section-rule {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin-top: 2em;
+  padding-top: 1.4em;
+}
+
+/* A callout that closes a page needs more air than one mid-flow. */
+.md-typeset .card-gap { margin-top: 2.5em; }
+
+/* ============================================================
+   Callouts — a card: left accent bar, icon + title, body below.
+   note = neutral, tip / warning = amber. Colour rules match
+   Material's own per-type specificity so its blue/green don't leak.
+   ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left-width: 2px;
+  border-radius: 6px;
+  box-shadow: none;
+  margin: 1.2em 0;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.78rem;
+}
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child { margin-bottom: 0; }
+
+/* title row: icon in the gutter + label, no separate band */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  position: relative;
+  display: block;
+  margin: 0 0 0.2rem;
+  padding: 0 0 0 1.45rem;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.45;
+}
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-position: center; mask-position: center;
+}
+
+/* NOTE / default = neutral (kills Material's blue default) */
+.md-typeset .admonition,
+.md-typeset .admonition.note {
+  border-color: var(--md-default-fg-color--lightest);
+  border-left-color: var(--md-default-fg-color--lighter);
+  background: rgba(128, 128, 128, 0.04);
+}
+.md-typeset .admonition > .admonition-title,
+.md-typeset .admonition.note > .admonition-title {
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset .admonition.note > .admonition-title::before {
+  background-color: var(--md-default-fg-color--light);
+}
+
+/* TIP / WARNING = amber (kills Material's green/orange defaults) */
+.md-typeset .admonition.tip,
+.md-typeset .admonition.hint,
+.md-typeset .admonition.warning,
+.md-typeset .admonition.danger {
+  border-color: var(--md-default-fg-color--lightest);
+  border-left-color: var(--md-accent-fg-color);
+  background: rgba(179, 102, 0, 0.06);
+}
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset .admonition.hint > .admonition-title,
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset .admonition.danger > .admonition-title {
+  background: transparent;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .admonition.tip > .admonition-title::before,
+.md-typeset .admonition.hint > .admonition-title::before,
+.md-typeset .admonition.warning > .admonition-title::before,
+.md-typeset .admonition.danger > .admonition-title::before {
+  background-color: var(--md-accent-fg-color);
+}
